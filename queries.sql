@@ -40,11 +40,44 @@ SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
 
 -- Who escapes the most, neutered or not neutered animals?
-SELECT AVG(escape_attempts) FROM animals WHERE neutered = false;
-SELECT AVG(escape_attempts) FROM animals WHERE neutered = true;
+SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered;
 
 -- What is the minimum and maximum weight of each type of animal?
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
-SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth > '1990-12-31' AND date_of_birth < '2000-01-01' GROUP BY species;
+SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth >= '1990-12-31' AND date_of_birth <= '2000-01-01' GROUP BY species;
+
+/*
+  *Transactions actions
+*/
+-- Set the species column and then rollback
+BEGIN;
+UPDATE animals SET species = 'unspecified';
+SELECT species FROM animals;
+ROLLBACK;
+SELECT species FROM animals;
+
+-- Set the species column correctly
+BEGIN;
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
+SELECT * FROM animals;
+COMMIT;
+SELECT * FROM animals;
+
+-- Delete everthing and rollback
+BEGIN;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- Create SavePoint transaction
+BEGIN;
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SAVEPOINT ripNew;
+UPDATE animals SET weight_kg = weight_kg * -1;
+ROLLBACK TO ripNew;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0; 
+COMMIT;
