@@ -44,3 +44,38 @@ UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' O
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
 SELECT name, owner_id FROM animals;
 COMMIT;
+
+/*
+ *New data from feature 4
+*/
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, 'Apr 23, 2000'),
+('Maisy Smith', 26, 'Jan 17, 2019'),
+('Stephanie Mendez', 64, 'May 4, 1981'),
+('Jack Harkness', 38, 'Jun 8, 2008');
+
+INSERT INTO specializations VALUES (1, 1),
+(3, 1),
+(3, 2),
+(4, 2);
+
+-- Data for the visits
+INSERT INTO visits SELECT vets.id, animals.id, 'May 24, 2020' FROM animals JOIN vets ON vets.name='William Tatcher' and animals.name='Agumon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Jul 22, 2020' FROM animals JOIN vets ON vets.name='Stephanie Mendez' and animals.name='Agumon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Feb 2, 2021' FROM animals JOIN vets ON vets.name='Jack Harkness' and animals.name='Gabumon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Jan 5, 2020' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Pikachu';
+INSERT INTO visits SELECT vets.id, animals.id, 'Mar 8, 2020' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Pikachu';
+INSERT INTO visits SELECT vets.id, animals.id, 'May 14, 2020' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Pikachu';
+INSERT INTO visits SELECT vets.id, animals.id, 'May 4, 2021' FROM animals JOIN vets ON vets.name='Stephanie Mendez' and animals.name='Devimon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Feb 24, 2021' FROM animals JOIN vets ON vets.name='Jack Harkness' and animals.name='Charmander';
+INSERT INTO visits SELECT vets.id, animals.id, 'Dec 21, 2019' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Plantmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Aug 10, 2020' FROM animals JOIN vets ON vets.name='William Tatcher' and animals.name='Plantmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Apr 7, 2021' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Plantmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Sep 29, 2019' FROM animals JOIN vets ON vets.name='Stephanie Mendez' and animals.name='Squirtle';
+INSERT INTO visits SELECT vets.id, animals.id, 'Oct 3, 2020' FROM animals JOIN vets ON vets.name='Jack Harkness' and animals.name='Angemon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Nov 4, 2020' FROM animals JOIN vets ON vets.name='Jack Harkness' and animals.name='Angemon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Jan 24, 2019' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Boarmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'May 15, 2019' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Boarmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Feb 27, 2020' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Boarmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'Aug 3, 2020' FROM animals JOIN vets ON vets.name='Maisy Smith' and animals.name='Boarmon';
+INSERT INTO visits SELECT vets.id, animals.id, 'May 24, 2020' FROM animals JOIN vets ON vets.name='Stephanie Mendez' and animals.name='Blossom';
+INSERT INTO visits SELECT vets.id, animals.id, 'Jan 11, 2021' FROM animals JOIN vets ON vets.name='William Tatcher' and animals.name='Blossom';
