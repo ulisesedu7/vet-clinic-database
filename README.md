@@ -33,6 +33,11 @@ $ code .
 - Twitter: [@LongswordMusic](https://twitter.com/LongswordMusic)
 - LinkedIn: [Ulises Largaespada](https://www.linkedin.com/in/ulises-largaespada-45570b1a4/)
 
+👤 **David Verde**
+- GitHub: [@omarramoun](https://github.com/David-Verde)
+- Twitter: [@omarramoun](https://twitter.com/UnyieldingOne)
+- LinkedIn: [david-verde-alvarez](https://www.linkedin.com/in/david-verde-alvarez/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
