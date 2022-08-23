@@ -73,11 +73,6 @@ CREATE TABLE visits (
 */
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
--- BEGIN;
--- ALTER TABLE visits ADD visits_id INT GENERATED ALWAYS AS IDENTITY NOT NULL;
--- ALTER TABLE visits ADD PRIMARY KEY (visits_id);
--- COMMIT;
-
 -- Creating indexes to improve performance
 CREATE INDEX vet_id_asc ON visits(vet_id asc);
 CREATE INDEX animal_id_asc ON visits(animal_id asc);
