@@ -2,6 +2,8 @@
 # Vet Clinic DataBase
 
 > This is a project that contains a database for a vetclinic to store information about some weird type of pets
+- Check out the diagram:
+![](./images/database_diagram.png)
 
 ## Built With
 
