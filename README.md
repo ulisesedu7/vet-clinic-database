@@ -2,6 +2,8 @@
 # Vet Clinic DataBase
 
 > This is a project that contains a database for a vetclinic to store information about some weird type of pets
+- Check out the diagram:
+![](./images/database_diagram.png)
 
 ## Built With
 
@@ -32,6 +34,11 @@ $ code .
 - GitHub: [@ulisesedu7](https://github.com/ulisesedu7)
 - Twitter: [@LongswordMusic](https://twitter.com/LongswordMusic)
 - LinkedIn: [Ulises Largaespada](https://www.linkedin.com/in/ulises-largaespada-45570b1a4/)
+
+👤 **David Verde**
+- GitHub: [@omarramoun](https://github.com/David-Verde)
+- Twitter: [@omarramoun](https://twitter.com/UnyieldingOne)
+- LinkedIn: [david-verde-alvarez](https://www.linkedin.com/in/david-verde-alvarez/)
 
 ## 🤝 Contributing
 
